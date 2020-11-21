@@ -1,0 +1,81 @@
+@font-face {
+    font-family: VPPixel;
+    src: url(VPPixel-Simplified.otf);
+}
+
+
+body{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+   background-image: url("../img/fondo.jpg");
+   background-size: 100% 100%;
+   font-family: VPPixel, Helvetica, sans-serif;
+   color: white;
+   font-size: 200%;
+
+}
+
+.img_piedra{
+    position: relative;
+    
+}
+  
+#piedrabtn, #papelbtn, #tijerasbtn{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(255, 255, 255, 0.1);
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    outline: none;
+}
+#piedrabtn{
+    background-image: url(../img/piedra.png);
+}
+
+#papelbtn{
+    background-image: url(../img/papel.png);
+}
+#tijerasbtn{
+    background-image: url(../img/tijeras.png);
+
+}
+
+ 
+#piedrabtn:hover{
+    animation-duration: 1s;
+    animation-name: bhover;
+    opacity: 0.6;
+}
+#papelbtn:hover{
+    animation-duration: 1s;
+    animation-name: bhover;
+    opacity: 0.6;
+}
+#tijerasbtn:hover{
+    animation-duration: 1s;
+    animation-name: bhover;
+    opacity: 0.6;
+}
+@keyframes bhover{
+
+
+from{
+    padding-top: 110px 
+    
+}
+
+
+to{
+    padding-top: 0
+}
+
+}
