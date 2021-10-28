@@ -6,7 +6,7 @@ var message;
 function main(humov){
     var hmm = ["rock", "paper", "scissors"];
     var pcmov = hmm[Math.floor(Math.random()*hmm.length)];
-    message= `You play ${humov}, the pc plays ${pcmov} <br>`;
+    message= `You picked ${humov}, the pc picked ${pcmov} <br>`;
     switch (humov) {
         case "rock":
                 switch(pcmov) {
