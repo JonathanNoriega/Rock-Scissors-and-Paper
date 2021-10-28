@@ -1,81 +1,72 @@
-@font-face {
-    font-family: VPPixel;
-    src: url(VPPixel-Simplified.otf);
-}
 
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body{
+    background-color: #483434;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #FFF3E4;
+    overflow: hidden;
+}
 
-    position: relative;
+h1{
+    background-color: #6B4F4F;
+}
+section{
+    height: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
-   background-image: url("../img/fondo.jpg");
-   background-size: 100% 100%;
-   font-family: VPPixel, Helvetica, sans-serif;
-   color: white;
-   font-size: 200%;
 
 }
-
-.img_piedra{
-    position: relative;
-    
+article{
+    display: flex;
+    margin: 4em auto;
+    flex-direction: row;
+    align-content: space-between;
 }
-  
-#piedrabtn, #papelbtn, #tijerasbtn{
-    position: relative;
-    display: inline-block;
+span{
+    background-color: #6B4F4F;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.button{
     background-color: rgb(255, 255, 255, 0.1);
     background-size: cover;
+
     height: 100px;
     width: 100px;
-    text-align: center;
-    height: 100px;
-    width: 100px;
-    justify-content: center;
     outline: none;
-}
-#piedrabtn{
-    background-image: url(../img/piedra.png);
+
+    margin: 0 1em;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-name: bhover-out;
 }
 
-#papelbtn{
-    background-image: url(../img/papel.png);
+.button:hover{
+    animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-name: bhover;
 }
-#tijerasbtn{
-    background-image: url(../img/tijeras.png);
-
-}
-
  
-#piedrabtn:hover{
-    animation-duration: 1s;
-    animation-name: bhover;
-    opacity: 0.6;
-}
-#papelbtn:hover{
-    animation-duration: 1s;
-    animation-name: bhover;
-    opacity: 0.6;
-}
-#tijerasbtn:hover{
-    animation-duration: 1s;
-    animation-name: bhover;
-    opacity: 0.6;
-}
 @keyframes bhover{
+    from{
+        transform: scale(1);
+        
+    }
 
-
-from{
-    padding-top: 110px 
+    to{
+        transform: scale(1.1);
+    }
+}
+@keyframes bhover-out {
+    from{
+        transform: scale(1.1);
+    }
     
-}
-
-
-to{
-    padding-top: 0
-}
-
+    to{
+        transform: scale(1);
+    }
 }

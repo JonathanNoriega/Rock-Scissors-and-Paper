@@ -1,91 +1,54 @@
-const botonpiedra = document.querySelector("#piedrabtn");
-var botonpapel  = document.querySelector("#papelbtn");
-const botontijeras= document.querySelector("#tijerasbtn");
-var spamjs = document.getElementById("spam");
-var spamjs2 = document.getElementById("spam2");
-var pcmov;
+const span = document.querySelector("#spam");
+const botonpiedra = document.querySelector("#piedra").addEventListener("click",  main.bind(null, "rock"));
+const botonpapel  = document.querySelector("#papel").addEventListener("click",   main.bind(null, "paper"));
+const botontijeras= document.querySelector("#tijeras").addEventListener("click", main.bind(null, "scissors"));
+var message;
+function main(humov){
+    var hmm = ["rock", "paper", "scissors"];
+    var pcmov = hmm[Math.floor(Math.random()*hmm.length)];
+    message= `You play ${humov}, the pc plays ${pcmov} <br>`;
+    switch (humov) {
+        case "rock":
+                switch(pcmov) {
+                    case "rock":
+                            message = message + "the game is tied.";
 
-botonpiedra.addEventListener("click", piedra);
-botontijeras.addEventListener("click", tijeras);
-botonpapel.addEventListener("click", papel);
-
-
-function papel(evento){
-    humov = "Papel";
-
-
-    
-
-    items = ['piedra', 'papel', 'tijeras'];
-    item = items[Math.floor(Math.random() * items.length)];
-
-    if(humov == "Papel" && item == "papel")
-    {
-        result = "¡Empate!";
+                        break;
+                    case "paper":
+                            message = message + "you lose.";
+                        break;
+                    case "scissors": 
+                            message = message + "you win.";
+                        break;
+                }
+            break;
+        case "paper":
+                switch(pcmov) {
+                    case "rock":
+                            message = message + "you win."
+                        break;
+                    case "paper":
+                            message = message + "the game is tied."
+                        break;
+                    case "scissors": 
+                            message = message + "you lose."
+                        break;
+                }
+            break;
+        case "scissors":
+            switch(pcmov) {
+                case "rock":
+                        message = message + "you lose."
+                    break;
+                case "paper":
+                        message = message + "you win."
+                    break;
+                case "scissors": 
+                        message = message + "the game is tied."
+                    break;
+                }
+            break;
     }
-    if(humov == "Papel" && item == "piedra")
-    {
-        result = "¡Ganaste!"
-    }
-    if(humov == "Papel" && item == "tijeras")
-    {
-        result = "¡Perdiste!"
-    }
-
-    spamjs2.innerHTML = "Tú juegas " + humov + ", El pc juega " + item + " el resultado es.. " + result;
-
-    console.log(evento);
-}
-function piedra(evento){
-    humov = "Piedra";
-
-    items = ['piedra', 'papel', 'tijeras'];
-    item = items[Math.floor(Math.random() * items.length)];
-
-    if(humov == "Piedra" && item == "piedra")
-    {
-        result = "¡Empate!";
-    }
-    if(humov == "Piedra" && item == "tijeras")
-    {
-        result = "¡Ganaste!"
-    }
-    if(humov == "Piedra" && item == "papel")
-    {
-        result = "¡Perdiste!"
-    }
-
-    spamjs2.innerHTML = "Tú juegas " + humov + ", El pc juega " + item + " el resultado es.. " + result;
-    console.log(evento);
-}
-
-function tijeras(event){
-    humov = "Tijeras";
-    var result;
-    
-    items = ['piedra', 'papel', 'tijeras'];
-    item = items[Math.floor(Math.random() * items.length)];
-
-    if(humov == "Tijeras" && item == "tijeras")
-    {
-        result = "¡Empate!";
-    }
-    if(humov == "Tijeras" && item == "papel")
-    {
-        result = "¡Ganaste!"
-    }
-    if(humov == "Tijeras" && item == "piedra")
-    {
-        result = "¡Perdiste!"
-    }
-
-    spamjs2.innerHTML = "Tú juegas " + humov + ", el pc juega " + item + " el resultado es.. " + result;
-    console.log(event);
+    span.innerHTML = message;
 
 }
-
-/* manera alternativa:
-botontijeras.addEventListener("click", function(evento){
-alert("funciona");
-}); 
-*/
